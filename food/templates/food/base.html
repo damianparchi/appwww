@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'index' %}">
+          <h1>
+            <img
+              src="data:image/png;base64,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"
+            />
+            Witaj w aplikacji {{name}}!
+          </h1>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{% url 'index' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'food:pizza' %}">Pizza</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kebab</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown link
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div>{% block content %} {% endblock %}</div>
+  </body>
+</html>
