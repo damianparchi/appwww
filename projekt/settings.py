@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'food',
-    'appka'
+    'appka',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

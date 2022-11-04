@@ -3,6 +3,19 @@ from datetime import datetime
 from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
+class MONTHS(models.TextChoices):
+        STYCZEN = '1', _('STYCZEN')
+        LUTY = '2', _('LUTY')
+        MARZEC = '3', _('MARZEC')
+        KWIECIEN = '4', _('KWIECIEN')
+        MAJ = '5', _('MAJ')
+        CZERWIEC = '6', _('CZERWIEC')
+        LIPIEC = '7', _('LIPIEC')
+        SIERPIEN = '8', _('SIERPIEN')
+        WRZESIEN = '9', _('WRZESIEN')
+        PAZDZIERNIK = '10', _('PAZDZIERNIK')
+        LISTOPAD = '11', _('LISTOPAD')
+        GRUDZIEN = '12', _('GRUDZIEN')
 
 class Druzyna(models.Model):
     class Kraj(models.TextChoices):
@@ -20,20 +33,6 @@ class Druzyna(models.Model):
 
 
 class Osoba(models.Model):
-    class MONTHS(models.TextChoices):
-        STYCZEN = '1', _('STYCZEN')
-        LUTY = '2', _('LUTY')
-        MARZEC = '3', _('MARZEC')
-        KWIECIEN = '4', _('KWIECIEN')
-        MAJ = '5', _('MAJ')
-        CZERWIEC = '6', _('CZERWIEC')
-        LIPIEC = '7', _('LIPIEC')
-        SIERPIEN = '8', _('SIERPIEN')
-        WRZESIEN = '9', _('WRZESIEN')
-        PAZDZIERNIK = '10', _('PAZDZIERNIK')
-        LISTOPAD = '11', _('LISTOPAD')
-        GRUDZIEN = '12', _('GRUDZIEN')
-
     imie = models.CharField(max_length = 50)
     nazwisko = models.CharField(max_length = 50)
     miesiac = models.CharField(max_length = 2, choices = MONTHS.choices, default = MONTHS.STYCZEN)
