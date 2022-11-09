@@ -19,6 +19,9 @@ from food import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('__debug__/', include('debug_toolbar.urls')),
     path('', views.index, name="index"),
-    path('food/', include('food.urls', namespace='food'))
+    path('food/', include('food.urls', namespace='food')),
+    path('osoba/', include("Osoby.urls")),
+    path('druzyna/', include("Druzyna.urls")),
 ]

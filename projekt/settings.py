@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'food',
-    'appka',
+    'Osoby',
+    'Druzyna',
+    "debug_toolbar",
     'rest_framework'
 ]
 
