@@ -12,6 +12,7 @@ class OsobaSerializer(serializers.Serializer):
     miesiac_urodzenia = serializers.ChoiceField(choices=MIESIACE, default=MIESIACE)
     data_dodania = serializers.DateField()
     druzyna = serializers.PrimaryKeyRelatedField(queryset=Druzyna.objects.all())
+    wlasciciel = serializers.ReadOnlyField(source = 'wlasciciel.username')
 
     def validate(self, data):
         if not data['imie'].isalpha():
